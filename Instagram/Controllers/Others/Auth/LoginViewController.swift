@@ -9,21 +9,45 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    private let usernameTextField: UITextField = {
+        return UITextField()
+    }()
+    
+    private let emailTextField: UITextField = {
+        return UITextField()
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let field = UITextField()
+        field.isSecureTextEntry = true
+        return field
+    }()
+    
+    private let loginButton: UIButton = {
+        return UIButton()
+    }()
+    
+    private let privacyButton: UIButton = {
+        return UIButton()
+    }()
+    private let infoButton: UIButton = {
+        return UIButton()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = .red
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.addSubview(usernameTextField)
+        self.view.addSubview(emailTextField)
+        self.view.addSubview(passwordTextField)
+        self.view.addSubview(loginButton)
+        self.view.addSubview(privacyButton)
+        self.view.addSubview(infoButton)
     }
-    */
-
 }
